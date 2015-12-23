@@ -1,0 +1,6 @@
+[submodule "minttysol"]
+	path = minttysol
+	url = https://github.com/karlin/mintty-colors-solarized.git
+[submodule "solarized"]
+	path = solarized
+	url = https://github.com/altercation/solarized.git
