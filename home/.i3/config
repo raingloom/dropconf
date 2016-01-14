@@ -159,9 +159,12 @@ bar {
 # ALSA volume control
 # set voldev Master
 # set volincr 10
-bindsym $mod+KP_Add      exec amixer sset Master 5%+
-bindsym $mod+KP_Subtract exec amixer sset Master 5%-
-bindsym $mod+KP_Enter    exec amixer sset Master toggle
+bindsym $mod+KP_Add      	exec amixer sset Master 5%+
+bindsym XF86AudioRaiseVolume	exec amixer sset Master 5%+
+bindsym $mod+KP_Subtract 	exec amixer sset Master 5%-
+bindsym XF86AudioLowerVolume	exec amixer sset Master 5%-
+bindsym $mod+KP_Enter    	exec amixer sset Master toggle
+bindsym XF86AudioMute		exec amixer sset Master toggle
 
 #screenshots
 bindsym Print       exec import -window root "$HOME/Pictures/screenshots/$(date +%s).jpeg"
