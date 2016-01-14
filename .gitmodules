@@ -4,3 +4,6 @@
 [submodule "solarized"]
 	path = solarized
 	url = https://github.com/altercation/solarized.git
+[submodule "ZeroBranePackage"]
+	path = ZeroBranePackage
+	url = https://github.com/pkulchenko/ZeroBranePackage.git
