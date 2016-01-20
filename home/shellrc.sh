@@ -21,8 +21,8 @@ alias ls='ls --color=auto'
 alias rmr='rm -rvf'
 alias l=ls
 alias ll='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
+alias la='ls -A'
+alias lla='ls -lA'
 
 
 for v in $pref_visual; do
