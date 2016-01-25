@@ -27,8 +27,8 @@ alias lla='ls -lA'
 
 for v in $pref_visual; do
 	if which "$v" > /dev/null; then
-    		export VISUAL="$v"
-	        break
+    	export VISUAL="$v"
+	    break
 	fi
 done
 
@@ -42,12 +42,14 @@ pastex(){
 	xclip -o -selection $clipname
 }
 # symlink magix
-removelink() {
-  [ -L "$1" ] && cp --remove-destination "$(readlink "$1")" "$1"
-}
-lnmv () {
+lnmv (){
+	mkdir -p $2
 	mv -v -t "$2" "$1"
 	ln -vs "$2/$(basename $1)" "$(dirname $1)"
+}
+mkcd (){
+	mkdir -p $1
+	cd $1
 }
 # luaenv needs manual activation
 activate-luaenv(){
