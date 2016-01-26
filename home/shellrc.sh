@@ -69,4 +69,9 @@ if which figlet > /dev/null; then
 else
 	echo $welcome
 fi
+
+# Fuck. That. Fucking. Goddamn. Fucktard. Bell.
+xset -b
+# Fuck.
+
 #EOF
