@@ -173,5 +173,6 @@ bindsym Print       exec import -window root "$HOME/Pictures/screenshots/$(date 
 exec dunst -geometry +0-0 -t notifications &
 
 #lockscreen
-bindsym $mod+Scroll_Lock         exec i3lock -f                                 #blur
-bindsym $mod+Shift+Scroll_Lock exec i3lock -c 000000 && amixer sset Master mute #black and muted
+bindsym $mod+Shift+Scroll_Lock exec i3lock -f #blur
+bindsym $mod+Scroll_Lock exec amixer sset Master mute && i3lock -c 000000	# black and muted, screen off
+

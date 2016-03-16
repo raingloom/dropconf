@@ -13,9 +13,12 @@ export clipname=primary
 
 
 
-
-export PATH="$HOME/bin:$PATH"
-
+if [ -d $HOME/bin ]; then
+	export PATH="$HOME/bin:$PATH"
+fi
+if [ -d /opt/openresty ]; then
+	export PATH="/opt/openresty/bin:/opt/openresty/nginx/sbin:$PATH"
+fi
 
 alias ls='ls --color=auto'
 alias rmr='rm -rvf'
@@ -25,6 +28,7 @@ alias la='ls -A'
 alias lla='ls -lA'
 
 
+# find an editor that exists
 for v in $pref_visual; do
 	if which "$v" > /dev/null; then
     	export VISUAL="$v"
@@ -35,8 +39,20 @@ done
 
 #==Custom functions==
 # xclip copy-pasting
+xclipSelections=(
+	primary
+	secondary
+	clipboard
+)
 clipx(){
 	xclip -selection $clipname
+}
+# same as clipx, but floods all copy buffers from the default one
+clipxflood(){
+	xclip
+	for sel in $xclipSelections; do
+		xclip -o | xclip -selection $sel
+	done
 }
 pastex(){
 	xclip -o -selection $clipname
