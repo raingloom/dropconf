@@ -8,7 +8,7 @@
 # editor preferences
 pref_visual=( nvim vim nano emacs )
 # custom xclip function use this
-export clipname=primary
+export clipname=clipboard
 #==//////////==
 
 
@@ -36,6 +36,9 @@ for v in $pref_visual; do
 	fi
 done
 
+if which gvfs-open > /dev/null; then
+	export GVFSD=/run/user/$UID/gvfs/
+fi
 
 #==Custom functions==
 # xclip copy-pasting
@@ -73,6 +76,9 @@ activate-luaenv(){
 		export PATH="$HOME/.luaenv/bin:$PATH"
 		eval "$(luaenv init -)"
 	fi
+}
+speedtest(){
+	wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip
 }
 #==////////////////==
 
