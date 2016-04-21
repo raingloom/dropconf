@@ -1,0 +1,4 @@
+#!/bin/sh
+for p in $@; do
+	printf "%s:localhost:%s " $p $p
+done

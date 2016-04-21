@@ -1,0 +1,4 @@
+#! /bin/env sh
+ssh -Y -L 5900:localhost:5900 -L 19970:localhost:19970 192.168.0.100 &
+vncviewer -DotWhenNoCursor=1 localhost:5900 &> /dev/null &
+gvfs-mount sftp://192.168.0.100
