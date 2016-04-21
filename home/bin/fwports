@@ -1,4 +1,4 @@
 #!/bin/sh
 for p in $@; do
-	printf "%s:localhost:%s " $p $p
+	printf "-L %s:localhost:%s " $p $p
 done
