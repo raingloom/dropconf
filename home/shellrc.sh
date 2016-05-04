@@ -45,7 +45,7 @@ done
 # quicker access to gvfs mounts
 if which gvfs-open > /dev/null; then
 	export GVFSD=/run/user/$UID/gvfs/
-	ln -vsT "$GVFSD" "$HOME/.gvfsd"
+	ln -vsfT "$GVFSD" "$HOME/.gvfsd"
 fi
 
 #==Custom functions==
