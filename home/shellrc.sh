@@ -21,7 +21,7 @@ if [ -d /opt/openresty ]; then
 fi
 if [ -d $HOME/.gem ]; then
 	for version in `ls -1 "$HOME/.gem/ruby"`; do
-		export PATH="$HOME/.gem/ruby/$version:$PATH"
+		export PATH="$HOME/.gem/ruby/$version/bin:$PATH"
 	done
 fi
 
@@ -45,7 +45,7 @@ done
 # quicker access to gvfs mounts
 if which gvfs-open > /dev/null; then
 	export GVFSD=/run/user/$UID/gvfs/
-	ln -s $GVFSD .gvfsd
+	ln -vsT "$GVFSD" "$HOME/.gvfsd"
 fi
 
 #==Custom functions==
