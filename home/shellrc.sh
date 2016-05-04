@@ -20,7 +20,7 @@ if [ -d /opt/openresty ]; then
 	export PATH="/opt/openresty/bin:/opt/openresty/nginx/sbin:$PATH"
 fi
 if [ -d $HOME/.gem ]; then
-	for version in (`ls -1 $HOME/.gem/ruby`); do
+	for version in `ls -1 "$HOME/.gem/ruby"`; do
 		export PATH="$HOME/.gem/ruby/$version:$PATH"
 	done
 fi
