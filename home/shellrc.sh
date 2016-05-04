@@ -19,6 +19,12 @@ fi
 if [ -d /opt/openresty ]; then
 	export PATH="/opt/openresty/bin:/opt/openresty/nginx/sbin:$PATH"
 fi
+if [ -d $HOME/.gem ]; then
+	for version in (`ls -1 $HOME/.gems/ruby`); do
+		export PATH="$HOME/.gem/ruby/$version:$PATH"
+	done
+fi
+
 
 alias ls='ls --color=auto'
 alias rmr='rm -rvf'
@@ -36,8 +42,10 @@ for v in $pref_visual; do
 	fi
 done
 
+# quicker access to gvfs mounts
 if which gvfs-open > /dev/null; then
 	export GVFSD=/run/user/$UID/gvfs/
+	ln -s $GVFSD .gvfsd
 fi
 
 #==Custom functions==
@@ -93,7 +101,7 @@ else
 fi
 
 # Fuck. That. Fucking. Goddamn. Fucktard. Bell.
-xset -b
+xset -b #die bell die
 # Fuck.
 
 #EOF
