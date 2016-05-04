@@ -19,6 +19,12 @@ fi
 if [ -d /opt/openresty ]; then
 	export PATH="/opt/openresty/bin:/opt/openresty/nginx/sbin:$PATH"
 fi
+if [ -d $HOME/.gem ]; then
+	for version in `ls -1 "$HOME/.gem/ruby"`; do
+		export PATH="$HOME/.gem/ruby/$version/bin:$PATH"
+	done
+fi
+
 
 alias ls='ls --color=auto'
 alias rmr='rm -rvf'
@@ -36,8 +42,10 @@ for v in $pref_visual; do
 	fi
 done
 
+# quicker access to gvfs mounts
 if which gvfs-open > /dev/null; then
 	export GVFSD=/run/user/$UID/gvfs/
+	ln -vsT "$GVFSD" "$HOME/.gvfsd"
 fi
 
 #==Custom functions==
@@ -85,15 +93,18 @@ speedtest(){
 
 
 # Welcome text
-welcome="Hello $(whoami), welcome to $(hostname)"
+welcome_head="Hello $(whoami), welcome to $(hostname)"
+welcome_body="When you don’t create things, you become defined by your tastes rather than ability. Your tastes only narrow and exclude people. so create.
+— Why the Lucky Stiff"
 if which figlet > /dev/null; then
-	echo $welcome | figlet -t -f kban
+	echo "$welcome_head" | figlet -t -f kban
 else
-	echo $welcome
+	echo "$welcome_head"
 fi
+echo "$welcome_body"
 
 # Fuck. That. Fucking. Goddamn. Fucktard. Bell.
-xset -b
+xset -b #die bell die
 # Fuck.
 
 #EOF
