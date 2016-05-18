@@ -95,7 +95,7 @@ speedtest(){
 # Welcome text
 welcome_head="Hello $(whoami), welcome to $(hostname)"
 welcome_body="When you don’t create things, you become defined by your tastes rather than ability. Your tastes only narrow and exclude people. so create.
-— Why the Lucky Stiff"
+— Why the Lucky Stiff\n$(date)\n$(uptime)"
 if which figlet > /dev/null; then
 	echo "$welcome_head" | figlet -t -f kban
 else
