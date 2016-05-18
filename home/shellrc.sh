@@ -6,7 +6,7 @@
 
 #==Parameters==
 # editor preferences
-pref_visual=( nvim vim nano emacs )
+pref_visual=( nvim vim nano vi emacs )
 # custom xclip function use this
 export clipname=clipboard
 #==//////////==
