@@ -1,2 +1,0 @@
-#/bin/env sh
-reflector --sort score --threads 4 --save /etc/pacman.d/mirrorlist
