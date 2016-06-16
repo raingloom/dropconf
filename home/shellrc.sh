@@ -11,7 +11,7 @@ pref_visual=( nvim vim nano vi emacs )
 export clipname=clipboard
 #==//////////==
 
-
+export PAGER=less #WTF Kali, y u no page with less
 
 if [ -d $HOME/bin ]; then
 	export PATH="$HOME/bin:$PATH"
