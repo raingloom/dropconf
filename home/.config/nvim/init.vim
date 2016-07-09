@@ -1,5 +1,3 @@
-set nocompatible               " be iMproved
-
 call plug#begin('~/.config/nvim/plugged')
 
 function! BuildYCM(info)
@@ -18,6 +16,7 @@ execute "set tabstop=".tabsize
 execute "set shiftwidth=".tabsize
 execute "set softtabstop=".tabsize
 set noexpandtab
-
 set ruler
 set number
+set ai
+set nowrap
