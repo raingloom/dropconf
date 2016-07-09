@@ -37,19 +37,20 @@ alias lla='ls -lA'
 
 # preference looper
 exppref(){
-	for v in ${1[*]}; do
-		if which "$v" > /dev/null; then
-			export $2="$v"
+	arg=( "$@" )
+	env=${arg[1]} # head
+	for cmd in ${arg[@]:1}; do # tail
+		if which "$cmd" > /dev/null; then
+			exp="$env=$cmd"
+			echo "$exp"
+			export "$exp"
 			break
 		fi
 	done
-	if [ -z $2 ]; then
-		unset $2
-	fi
 }
-exppref $pref_visual VISUAL
+exppref VISUAL $pref_visual
 export EDITOR=$VISUAL #we are hard core like that :^)
-exppref $pref_term TERM
+#exppref TERM $pref_term
 
 # quicker access to gvfs mounts
 if which gvfs-open > /dev/null; then
@@ -111,6 +112,11 @@ else
 	echo "$welcome_head"
 fi
 echo "$welcome_body"
+
+# Feh background reload
+if [ -x $HOME/.fehbg ]; then
+	$HOME/.fehbg
+fi
 
 # Fuck. That. Fucking. Goddamn. Fucktard. Bell.
 xset -b #die bell die
