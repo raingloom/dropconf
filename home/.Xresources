@@ -1,5 +1,9 @@
 xterm.*.reverseVideo: true
 
 urxvt*foreground: white
-urxvt*background: rgba:0000/0000/0000/cccc
+urxvt*background: rgba:0000/0000/0000/8000
 URxvt.transparent:   true
+urxvt*meta8: true
+urxvt*scrollBar: false
+URxvt.inputMethod: ibus
+URxvt.preeditType: OverTheSpot
