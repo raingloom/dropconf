@@ -7,3 +7,6 @@
 [submodule "ZeroBranePackage"]
 	path = ZeroBranePackage
 	url = https://github.com/pkulchenko/ZeroBranePackage.git
+[submodule "home/.config/blender/2.77/scripts/addons/animation_nodes"]
+	path = home/.config/blender/2.77/scripts/addons/animation_nodes
+	url = https://github.com/JacquesLucke/animation_nodes.git
