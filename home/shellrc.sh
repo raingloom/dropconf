@@ -43,10 +43,13 @@ exppref(){
 			break
 		fi
 	done
+	if [ -z $2 ]; then
+		unset $2
+	fi
 }
-exppref pref_visual VISUAL
-export EDITOR=VISUAL #we are hard core like that :^)
-exppref pref_term TERM
+exppref $pref_visual VISUAL
+export EDITOR=$VISUAL #we are hard core like that :^)
+exppref $pref_term TERM
 
 # quicker access to gvfs mounts
 if which gvfs-open > /dev/null; then
