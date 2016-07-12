@@ -122,4 +122,7 @@ fi
 xset -b #die bell die
 # Fuck.
 
+if [ ! -z "$SSH_TTY" ] && [ -z $TMUX ]; then
+	tmux
+fi
 #EOF
