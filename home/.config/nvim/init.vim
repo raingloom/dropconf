@@ -16,6 +16,7 @@ execute "set tabstop=".tabsize
 execute "set shiftwidth=".tabsize
 execute "set softtabstop=".tabsize
 set noexpandtab
+set breakindent
 set ruler
 set number
 set ai
